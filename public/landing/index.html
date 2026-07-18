@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Welcome to SHIELD Program</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="/landing/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/landing/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/landing/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/landing/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/landing/css/style.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="../assets/img/SHEILD.png" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Modern Slim Scrollbar */
+        ::-webkit-scrollbar {
+            width: 4px !important;
+            /* Added !important */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent !important;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(136, 136, 136, 0.5) !important;
+            border-radius: 2px !important;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(85, 85, 85, 0.8) !important;
+        }
+
+        /* For Firefox */
+        * {
+            scrollbar-width: thin !important;
+            scrollbar-color: rgba(136, 136, 136, 0.5) transparent !important;
+        }
+
+        /* Add only these new rules for modal centering */
+        .modal-dialog {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) !important;
+            margin: 0;
+        }
+
+        @media (max-width: 992px) {
+            .modal-dialog {
+                width: calc(100% - 2rem);
+            }
+        }
+
+        .modal-content {
+            /* font-family: 'Nunito', sans-serif; */
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1f);
+        }
+
+        .modal-body {
+            /* font-family: 'Nunito', sans-serif; */
+        }
+
+        #modalClusterTitle {
+            /* font-family: 'Nunito', sans-serif; */
+            font-weight: 600;
+        }
+
+        .detail-label {
+            /* font-family: 'Nunito', sans-serif; */
+            font-weight: 500;
+        }
+
+        .detail-value {
+            /* font-family: 'Nunito', sans-serif; */
+            font-weight: 400;
+        }
+
+        /* Apply to all text in modal */
+        #clusterModal * {
+            /* font-family: 'Nunito', sans-serif; */
+        }
+
+        /* More specific selectors to ensure the font is applied */
+        #clusterModal,
+        #clusterModal h3,
+        #clusterModal p,
+        #clusterModal div,
+        #clusterModal span,
+        #modalClusterTitle,
+        #modalClusterLead,
+        #modalClusterHead,
+        #modalClusterAgencies,
+        #modalClusterPrinciple {
+            /* font-family: 'Nunito', sans-serif !important; */
+        }
+
+        #modalClusterTitle {
+            font-weight: 700 !important;
+        }
+
+        .operating-principle h6 {
+            font-weight: 600 !important;
+            /* font-family: 'Nunito', sans-serif !important; */
+        }
+
+        .modal-body {
+            /* font-family: 'Nunito', sans-serif !important; */
+            font-weight: 400;
+        }
+
+        strong {
+            font-weight: 600 !important;
+            /* font-family: 'Nunito', sans-serif !important; */
+        }
+
+        /* Base navbar styles */
+        .container-fluid.bg-white.sticky-top {
+            background-color: transparent !important;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+            padding: 0.5rem 0;
+            /* Reduced vertical padding */
+            transition: all 0.3s ease;
+            min-height: 60px;
+            /* Set minimum height */
+        }
+
+        /* When scrolled state */
+        .container-fluid.bg-white.sticky-top.scrolled {
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style for nav links */
+        .navbar-nav .nav-link {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            color: white !important;
+            transition: color 0.3s ease;
+        }
+
+        .scrolled .navbar-nav .nav-link {
+            color: #000 !important;
+        }
+
+        .scrolled .login-btn {
+            border: 1px solid #000;
+            color: #000 !important;
+        }
+
+        /* Update navbar padding */
+        .navbar {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+        }
+
+        /* Update logo sizing */
+        .img-holder img {
+            height: 50px;
+            /* Reduced logo height */
+            width: auto;
+            object-fit: contain;
+            margin-right: 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-white sticky-top py-0">
+        <div>
+            <nav class="navbar px-5 navbar-expand-lg navbar-light py-0">
+                <figure class="img-holder has-before">
+                    <img src="/landing/img/SHIELD horizontal.png" alt="Katuparan Center" class="img-cover" style="height: 60px; width: auto;">
+                </figure>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="/" class="nav-item nav-link active">Home</a>
+                        <a href="#about" class="nav-item nav-link">About the Project</a>
+                        <a href="#features" class="nav-item nav-link">Features</a>
+                        <a href="/login" class="nav-item nav-link login-btn">
+                            Log in <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+    <!-- Carousel Start -->
+    <div class="container-fluid px-0 mb-n5">
+        <div class="position-relative">
+            <div class="">
+                <div class="active" style="height: 100vh; margin: 0; overflow: hidden; position: relative;">
+                    <!-- Video background -->
+                    <video class="w-100" autoplay muted loop playsinline style="
+                        height: 100vh;
+                        object-fit: cover;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        margin: 0;
+                        z-index: 1;
+                        min-width: 100%;
+                        min-height: 100%;
+                        transform: translateY(0);
+                        bottom: 0;
+                        display: block;
+                    ">
+                        <source src="../assets/video/landingpage1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <!-- Overlay and content -->
+                    <div class="carousel-caption position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="z-index: 2;">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-12 text-center">
+                                    <p class="fs-4 text-white animated zoomIn">Welcome to <strong class="text-dark">SHIELD Program</strong></p>
+                                    <h1 class="display-1 text-white mb-4 animated zoomIn">
+                                        <div style="display: flex; justify-content: center; align-items: center; white-space: nowrap; font-size: 2.4vw;">
+                                            <span style="font-size: 3.5vw;">S</span>treng
+                                            <span style="font-size: 3.5vw;">H</span>tening&nbsp;&nbsp;
+                                            <span style="font-size: 3.5vw;">I</span>nstitutions and&nbsp;&nbsp;
+                                            <span style="font-size: 3.5vw;">E</span>mpowering&nbsp;&nbsp;
+                                            <span style="font-size: 3.5vw;">L</span>ocalities against&nbsp;&nbsp;
+                                            <span style="font-size: 3.5vw;">D</span>iscrimination&nbsp;&nbsp;
+                                        </div>
+                                        <div style="font-size: 1.5vw; margin-top: 20px;">
+                                            Program for Former Rebels
+                                        </div>
+                                    </h1>
+                                    <a href="" class="btn btn-light rounded-pill py-3 px-5 animated zoomIn">Explore More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- About Start -->
+    <section class="section about" id="about" aria-label="about" style="margin-top: -3rem;">
+        <div class="container-xxl py-0 pb-5">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-5 wow fadeIn d-flex justify-content-center align-items-center" data-wow-delay="0.1s">
+                        <img src="/landing/img/SHIELD vertical.png" alt="" style="width: 600px; height: 500px; object-fit: contain;">
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <div class="section-title">
+                            <p class="fs-5 fw-medium fst-italic text-primary">About the Project</p>
+                            <h1 class="display-6">SHIELD Program: Index System</h1>
+                        </div>
+                        <p class="mb-4">SHIELD will be a web-based information system capable of supporting Katuparan Center which will act
+                            as the center for development for the former rebels. It will serve as a site for system administration
+                            supervising the former rebels along with their socio-economic challenges in the communities where these
+                            former rebels are reintegrating back into society and are accessing the livelihood support through the
+                            different government agencies. </p>
+                        <p class="mb-4">
+                            This system will allow for different government agencies to identify and resolve issues and problems in a
+                            particular conflict affected area. GeoTagging will be a feature of the proposed system in the challenge of
+                            adding geographical identification data to the conflict-affected areas that the former rebels lived in. The
+                            geographical identification data will consist of coordinates by calling the latitude and longitude. Descriptive
+                            analytics will also be a part of the proposed system to visualize the reintegration progress for the
+                            geographic areas as provided by the multiple government agencies provided to the former rebels by data
+                            analysis.</p>
+                        <a href="" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Start -->
+    <div class="container-fluid product py-3 my-3 position-relative">
+        <!-- Video background -->
+        <video class="w-100 h-100" autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; object-fit: cover; z-index: 0;">
+            <source src="../assets/video/landingpage2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="container py-3" style="position: relative; z-index: 1;">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <p class="fs-3 fw-bold text-white">12 CLUSTERS</p>
+            </div>
+
+            <style>
+                .login-btn {
+                    border: 1px solid #000;
+                    border-radius: 30px;
+                    padding: 0px 12px !important;
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    transition: all 0.3s ease;
+                    font-size: 14px;
+                    height: 32px;
+                    margin-top: 20px;
+                    line-height: 32px;
+                }
+
+                .login-btn i {
+                    font-size: 12px;
+                    transition: transform 0.3s ease;
+                }
+
+                .login-btn:hover {
+                    border-width: 1.5px;
+                    background-color: transparent;
+                    color: #000 !important;
+                    transform: translateY(-1px);
+                }
+
+                .login-btn:hover i {
+                    transform: translateX(3px);
+                }
+
+                .circle-container {
+                    position: relative;
+                    width: 600px;
+                    height: 600px;
+
+                }
+
+                .center-logo {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 3;
+                }
+
+                .logo-circle {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform-origin: 50% 50%;
+                    z-index: 2;
+                    transition: all 0.3s ease;
+                }
+
+                .logo-circle img {
+                    width: 100px;
+                    height: 100px;
+                    transform: translate(-50%, -50%);
+                    transition: all 0.3s ease;
+                    filter: drop-shadow(0 0 0 transparent);
+                }
+
+                .logo-circle:nth-child(3) {
+                    transform: rotate(0deg) translateX(220px) rotate(0deg);
+                }
+
+                .logo-circle:nth-child(4) {
+                    transform: rotate(30deg) translateX(220px) rotate(-30deg);
+                }
+
+                .logo-circle:nth-child(5) {
+                    transform: rotate(60deg) translateX(220px) rotate(-60deg);
+                }
+
+                .logo-circle:nth-child(6) {
+                    transform: rotate(90deg) translateX(220px) rotate(-90deg);
+                }
+
+                .logo-circle:nth-child(7) {
+                    transform: rotate(120deg) translateX(220px) rotate(-120deg);
+                }
+
+                .logo-circle:nth-child(8) {
+                    transform: rotate(150deg) translateX(220px) rotate(-150deg);
+                }
+
+                .logo-circle:nth-child(9) {
+                    transform: rotate(180deg) translateX(220px) rotate(-180deg);
+                }
+
+                .logo-circle:nth-child(10) {
+                    transform: rotate(210deg) translateX(220px) rotate(-210deg);
+                }
+
+                .logo-circle:nth-child(11) {
+                    transform: rotate(240deg) translateX(220px) rotate(-240deg);
+                }
+
+                .logo-circle:nth-child(12) {
+                    transform: rotate(270deg) translateX(220px) rotate(-270deg);
+                }
+
+                .logo-circle:nth-child(13) {
+                    transform: rotate(300deg) translateX(220px) rotate(-300deg);
+                }
+
+                .logo-circle:nth-child(14) {
+                    transform: rotate(330deg) translateX(220px) rotate(-330deg);
+                }
+
+                .connecting-lines {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    pointer-events: none;
+                    z-index: 1;
+                }
+
+                .connecting-line {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 220px;
+                    height: 1px;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    transform-origin: left center;
+                }
+
+                .connecting-line:nth-child(1) {
+                    transform: rotate(0deg);
+                }
+
+                .connecting-line:nth-child(2) {
+                    transform: rotate(30deg);
+                }
+
+                .connecting-line:nth-child(3) {
+                    transform: rotate(60deg);
+                }
+
+                .connecting-line:nth-child(4) {
+                    transform: rotate(90deg);
+                }
+
+                .connecting-line:nth-child(5) {
+                    transform: rotate(120deg);
+                }
+
+                .connecting-line:nth-child(6) {
+                    transform: rotate(150deg);
+                }
+
+                .connecting-line:nth-child(7) {
+                    transform: rotate(180deg);
+                }
+
+                .connecting-line:nth-child(8) {
+                    transform: rotate(210deg);
+                }
+
+                .connecting-line:nth-child(9) {
+                    transform: rotate(240deg);
+                }
+
+                .connecting-line:nth-child(10) {
+                    transform: rotate(270deg);
+                }
+
+                .connecting-line:nth-child(11) {
+                    transform: rotate(300deg);
+                }
+
+                .connecting-line:nth-child(12) {
+                    transform: rotate(330deg);
+                }
+
+                .logo-circle:hover {
+                    z-index: 4;
+                }
+
+                .logo-circle:hover img {
+                    transform: translate(-50%, -50%) scale(1.2);
+                    filter:
+                        drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)) drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
+                }
+
+                .img-holder {
+                    margin: 0;
+
+                    /* Add vertical padding */
+                    display: flex;
+                    align-items: center;
+                }
+
+                .img-holder img {
+
+                    height: 80px;
+                    /* Increased height for better visibility */
+                    object-fit: contain;
+                }
+
+                /* If you need the has-before effect, add this */
+                .img-holder.has-before {
+                    position: relative;
+                    display: inline-flex;
+                }
+            </style>
+
+            <div class="circle-container">
+                <div class="connecting-lines">
+                    <div class="connecting-line"></div>
+                    <div class="connecting-line"></div>
+                    <div class="connecting-line"></div>
+                    <div class="connecting-line"></div>
+                    <div class="connecting-line"></div>
+                    <div class="connecting-line"></div>
+                    <div class="connecting-line"></div>
+                    <div class="connecting-line"></div>
+                    <div class="connecting-line"></div>
+                    <div class="connecting-line"></div>
+                    <div class="connecting-line"></div>
+                    <div class="connecting-line"></div>
+                </div>
+
+                <div class="center-logo">
+                    <img src="/landing/img/SHIELD.png" alt="Katuparan Center Logo" style="width: 150px; height: 150px; object-fit: contain;">
+                </div>
+
+                <div class="logo-circle">
+                    <a href="#" data-cluster="enhancecomp"><img src="/landing/img/12 cluster/enhancecomp.png" alt="Enhanced Competency"></a>
+                </div>
+                <div class="logo-circle">
+                    <a href="#" data-cluster="basicservices"><img src="/landing/img/12 cluster/basicservices.png" alt="Basic Services"></a>
+                </div>
+                <div class="logo-circle">
+                    <a href="#" data-cluster="infrastructure"><img src="/landing/img/12 cluster/infrastructure.png" alt="Infrastructure"></a>
+                </div>
+                <div class="logo-circle">
+                    <a href="#" data-cluster="international"><img src="/landing/img/12 cluster/international.png" alt="International"></a>
+                </div>
+                <div class="logo-circle">
+                    <a href="#" data-cluster="legalcoop"><img src="/landing/img/12 cluster/legalcoop.png" alt="Legal Cooperation"></a>
+                </div>
+                <div class="logo-circle">
+                    <a href="#" data-cluster="localgov"><img src="/landing/img/12 cluster/localgov.png" alt="Local Government"></a>
+                </div>
+                <div class="logo-circle">
+                    <a href="#" data-cluster="localpeace"><img src="/landing/img/12 cluster/localpeace.png" alt="Local Peace"></a>
+                </div>
+                <div class="logo-circle">
+                    <a href="#" data-cluster="peacelaw"><img src="/landing/img/12 cluster/peacelaw.png" alt="Peace Law"></a>
+                </div>
+                <div class="logo-circle">
+                    <a href="#" data-cluster="poverty"><img src="/landing/img/12 cluster/poverty.png" alt="Poverty"></a>
+                </div>
+                <div class="logo-circle">
+                    <a href="#" data-cluster="sectoral"><img src="/landing/img/12 cluster/sectoral.png" alt="Sectoral"></a>
+                </div>
+                <div class="logo-circle">
+                    <a href="#" data-cluster="situational"><img src="/landing/img/12 cluster/situational.png" alt="Situational"></a>
+                </div>
+                <div class="logo-circle">
+                    <a href="#" data-cluster="strategic"><img src="/landing/img/12 cluster/strategic.png" alt="Strategic"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Products End -->
+
+    <!-- Feature Start -->
+    <section class="section features" id="features" aria-label="features">
+        <div class="container-xxl py-5 position-relative">
+            <div class="container position-relative">
+                <div class="row g-5">
+                    <div class="col-lg-6">
+                        <div class="row g-3">
+                            <div class="col-6 text-end">
+                                <img class="img-fluid bg-white w-100 mb-3 wow fadeIn" data-wow-delay="0.1s" src="/landing/img/people1.png" alt="">
+                                <img class="img-fluid bg-white w-50 wow fadeIn" data-wow-delay="0.2s" src="/landing/img/people2.png" alt="">
+                            </div>
+                            <div class="col-6">
+                                <img class="img-fluid bg-white w-50 mb-3 wow fadeIn" data-wow-delay="0.3s" src="/landing/img/people6.png" alt="">
+                                <img class="img-fluid bg-white w-100 wow fadeIn" data-wzow-delay="0.4s" src="/landing/img/people5.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <div class="section-title">
+                            <!-- <p class="fs-5 fw-medium fst-italic text-primary">Feature</p> -->
+                            <h1 class="display-6">The success story of Katuparan Center</h1>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-sm-12">
+                                <h5>With over 1,500 projects already approved and ready for deployment, the BDP and its effects are already being felt in rural communities all over the country.</h5>
+                                <h5 class="mb-0 mt-5">Here are their Stories</h5>
+                                <div class="mt-4">
+                                    <a href="" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="border-top mb-4"></div>
+                        <div class="row g-3">
+                            <div class="col-sm-8">
+                                <h5>Daily use of a cup of tea is good for your health</h5>
+                                <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <img class="img-fluid bg-white w-100" src="/landing/img/about-6.jpg" alt="">
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Article End -->
+
+
+    <!-- Video Start -->
+    <div class="container-fluid video my-5">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-lg-8 py-5 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="py-5">
+                        <h1 class="display-6 mb-4"><span class="text-white">Features</span></h1>
+                        <h5 class="fw-normal lh-base fst-italic text-white mb-10">
+                            Welcome to our comprehensive application designed to streamline and enhance the operations
+                            of the SHIELD Program. Our user-friendly system is accessible through website, providing
+                            flexibility and convenience. The website can be accessed via www.katuparancenter.com.
+                            Explore the key features of our application below:
+                        </h5>
+                        <div class="row g-4 mb-5">
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0 btn-lg-square bg-white text-primary rounded-circle me-3">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <span class="text-white">Visualization of location data on a map</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0 btn-lg-square bg-white text-primary rounded-circle me-3">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <span class="text-white">Monitoring of former rebels and RCSP Barangay progress</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0 btn-lg-square bg-white text-primary rounded-circle me-3">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <span class="text-white">Phase-Based Monitoring</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0 btn-lg-square bg-white text-primary rounded-circle me-3">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <span class="text-white">Holistic view of program and interventions by government agencies</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="btn btn-light rounded-pill py-3 px-5" href="">Explore More</a>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="h-100 d-flex align-items-center justify-content-center" style="min-height: 300px;">
+                        <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                            <span></span>
+                        </button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Video End -->
+
+
+    <!-- Video Modal Start -->
+    <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Youtube Video</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- 16:9 aspect ratio -->
+                    <div class="ratio ratio-16x9">
+                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always" allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video Modal End -->
+
+
+    <!-- Store Start -->
+    <div class="container-fluid product py-3 my-3">
+        <div class="container py-3">
+            <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <p class="fs-5 fw-medium fst-italic text-primary">Government Agencies</p>
+                <h1 class="display-6">12 Cluster Implementation Plan</h1>
+            </div>
+            <div class="owl-carousel product-carousel wow fadeInUp" data-wow-delay="0.5s">
+                <a href="" class="d-block product-item rounded">
+                    <img src="/landing/images/DILG.png" alt="">
+                    <div class="text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-dark">Department of Local and Good Governance</h4>
+                        <!-- <span class="text-body">Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum</span> -->
+                    </div>
+                </a>
+
+                <a href="" class="d-block product-item rounded">
+                    <img src="/landing/images/DEPED.png" alt="">
+                    <div class=" text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-primary">Department of Education</h4>
+                        <!-- <span class="text-body">Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum</span> -->
+                    </div>
+                </a>
+
+                <a href="" class="d-block product-item rounded">
+                    <img src="/landing/images/DOH.png" alt="">
+                    <div class=" text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-green">Department of Health</h4>
+                        <!-- <span class="text-body">Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum</span> -->
+                    </div>
+                </a>
+
+                <a href="" class="d-block product-item rounded">
+                    <img src="/landing/images/DA.png" alt="">
+                    <div class=" text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-yellow">Department of Agriculture</h4>
+                        <!-- <span class="text-body">Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum</span> -->
+                    </div>
+                </a>
+
+                <a href="" class="d-block product-item rounded">
+                    <img src="/landing/images/DENR.png" alt="">
+                    <div class=" text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-primary">Department of Environment and Natural Resources</h4>
+                        <!-- <span class="text-body">Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum</span> -->
+                    </div>
+                </a>
+
+                <a href="" class="d-block product-item rounded">
+                    <img src="/landing/images/DOE.png" alt="">
+                    <div class=" text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-yellow">Department of Energy</h4>
+                        <!-- <span class="text-body">Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum</span> -->
+                    </div>
+                </a>
+
+                <a href="" class="d-block product-item rounded">
+                    <img src="/landing/images/NEDA.png" alt="">
+                    <div class=" text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-primary">The National Economic and Development Authority</h4>
+                        <!-- <span class="text-body">Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum</span> -->
+                    </div>
+                </a>
+
+                <a href="" class="d-block product-item rounded">
+                    <img src="/landing/images/NHA.png" alt="">
+                    <div class=" text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-green">National Housing Authority</h4>
+                        <!-- <span class="text-body">Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum</span> -->
+                    </div>
+                </a>
+
+
+                <a href="" class="d-block product-item rounded">
+                    <img src="/landing/images/DSWD.png" alt="">
+                    <div class=" text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-red">Department of Social Welfare and Development</h4>
+                        <!-- <span class="text-body">Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum</span> -->
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+    <!-- Store End -->
+
+
+    <!-- Team Section Start -->
+    <div class="container-fluid py-5" style="margin: 5rem 0;">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                <h1 class="display-6">About The Team</h1>
+                <p class="mt-4">Meet the team behind SHIELD! Our team is composed of skilled and dedicated individuals who have worked together to create SHIELD A Program for Former Rebels through Katuparan Center.</p>
+            </div>
+
+            <!-- Advisers Section -->
+            <div class="text-center mb-4">
+                <h3 class="text-primary fw-bold mb-4">Project Advisers</h3>
+                <div class="row justify-content-center" style="max-width: 1000px; margin: 3rem auto;">
+                    <div class="col-lg-4 col-md-6 mb-3 text-center">
+                        <div class="team-member p-4 bg-light rounded-3 shadow-sm hover-shadow">
+                            <img class="img-fluid rounded-circle mb-4 border border-5 border-white shadow"
+                                src="/landing/img/devteam/joanne.JPG" alt=""
+                                style="width: 200px; height: 200px; object-fit: cover; object-position: center center;">
+                            <h4 class="mb-2">Joane May B. Delima, MIT</h4>
+                            <p class="text-primary fw-bold mb-3">Internal Adviser</p>
+                            <div class="team-social">
+                                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3 text-center">
+                        <div class="team-member p-4 bg-light rounded-3 shadow-sm hover-shadow">
+                            <img class="img-fluid rounded-circle mb-4 border border-5 border-white shadow"
+                                src="/landing/img/devteam/kish.jpg" alt=""
+                                style="width: 200px; height: 200px; object-fit: cover; object-position: center top;">
+                            <h4 class="mb-2">Dr. Giovanni Kish Basilgo, LCBM</h4>
+                            <p class="text-primary fw-bold mb-3">External Adviser</p>
+                            <div class="team-social">
+                                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Members Section -->
+            <div class="text-center">
+                <h3 class="text-primary fw-bold mb-4">Development Team</h3>
+                <div class="row justify-content-center" style="max-width: 1000px; margin: 0 auto;">
+                    <div class="col-lg-4 col-md-6 mb-3 text-center">
+                        <div class="team-member p-4 bg-light rounded-3 shadow-sm hover-shadow">
+                            <img class="img-fluid rounded-circle mb-4 border border-5 border-white shadow"
+                                src="/landing/img/devteam/gendrix.webp" alt=""
+                                style="width: 200px; height: 200px; object-fit: cover; object-position: center top;">
+                            <h4 class="mb-2">Gendrix Rollon</h4>
+                            <p class="text-primary fw-bold mb-3">Project Staff</p>
+                            <div class="team-social">
+                                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3 text-center">
+                        <div class="team-member p-4 bg-light rounded-3 shadow-sm hover-shadow">
+                            <img class="img-fluid rounded-circle mb-4 border border-5 border-white shadow"
+                                src="/landing/img/devteam/neil.webp" alt=""
+                                style="width: 200px; height: 200px; object-fit: cover; object-position: center top;">
+                            <h4 class="mb-2">Neil Bryan Escaner</h4>
+                            <p class="text-primary fw-bold mb-3">Project Leader</p>
+                            <div class="team-social">
+                                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3 text-center">
+                        <div class="team-member p-4 bg-light rounded-3 shadow-sm hover-shadow">
+                            <img class="img-fluid rounded-circle mb-4 border border-5 border-white shadow"
+                                src="/landing/img/devteam/angelika.webp" alt=""
+                                style="width: 200px; height: 200px; object-fit: cover; object-position: center top;">
+                            <h4 class="mb-2">Angelika Libanan</h4>
+                            <p class="text-primary fw-bold mb-3">Project Staff</p>
+                            <div class="team-social">
+                                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team Section End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-xxl contact py-5">
+        <div class="container">
+            <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <p class="fs-5 fw-medium fst-italic text-primary">Contact Us</p>
+                <h1 class="display-6">Contact us right now</h1>
+            </div>
+            <div class="row justify-content-center wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-8">
+                    <p class="text-center mb-5">We're here to help! Whether you have a question, need support, or want to learn more about our services, you can reach us anytime via email or phone. Our team is ready to provide quick and reliable assistance—don't hesitate to get in touch!</p>
+                    <div class="row g-5">
+                        <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="btn-square mx-auto mb-3">
+                                <i class="fa fa-envelope fa-2x text-white"></i>
+                            </div>
+                            <p class="mb-2">katuparancenter@gmail.com</p>
+                            <!-- <p class="mb-0">support@example.com</p> -->
+                        </div>
+                        <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="btn-square mx-auto mb-3">
+                                <i class="fa fa-phone fa-2x text-white"></i>
+                            </div>
+                            <p class="mb-2">+6398-1099-9310</p>
+                            <!-- <p class="mb-0">+012 345 67890</p> -->
+                        </div>
+                        <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="btn-square mx-auto mb-3">
+                                <i class="fa fa-map-marker-alt fa-2x text-white"></i>
+                            </div>
+                            <p class="mb-2">Roxas Ext, Digos City</p>
+                            <!-- <p class="mb-0">New York, USA</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Start -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer mt-5 py-3" style="background-color: white; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);">
+        <div class="container text-center">
+            <div class="mb-3">
+                <img src="/landing/img/SHIELD horizontal.png" alt="SHIELD Program" style="height: 100px;">
+            </div>
+            <p class="text-dark mb-0">Copyright © 2024. Powered By SHIELD Program</p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/landing/lib/wow/wow.min.js"></script>
+    <script src="/landing/lib/easing/easing.min.js"></script>
+    <script src="/landing/lib/waypoints/waypoints.min.js"></script>
+    <script src="/landing/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/landing/js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+    <script>
+        // Initialize SimpleBar on the body
+        new SimpleBar(document.body, {
+            autoHide: true,
+            scrollbarMinSize: 8,
+        });
+    </script>
+
+    <style>
+        .team-member {
+            transition: all 0.3s ease;
+            background: linear-gradient(145deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .hover-shadow:hover {
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+        }
+
+        .team-social {
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover .team-social {
+            opacity: 1;
+        }
+
+        .btn-square {
+            width: 38px;
+            height: 38px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-square:hover {
+            background: #007bff;
+            color: #ffffff;
+            border-color: #007bff;
+        }
+
+        .text-primary {
+            color: #007bff !important;
+        }
+    </style>
+
+    <!-- Add this modal HTML before the closing body tag -->
+    <div class="modal fade" id="clusterModal" tabindex="-1" aria-labelledby="clusterModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="d-flex align-items-start">
+                        <!-- Cluster Logo -->
+                        <div class="cluster-logo me-4">
+                            <img id="modalClusterLogo" src="" alt="" style="width: 120px; height: 120px;">
+                        </div>
+
+                        <!-- Cluster Information -->
+                        <div class="cluster-info flex-grow-1">
+                            <h3 id="modalClusterTitle" class="fw-bold mb-3"></h3>
+
+                            <div class="mb-2">
+                                <strong>Lead:</strong> <span id="modalClusterLead"></span>
+                            </div>
+
+                            <div class="mb-2">
+                                <strong>Head:</strong> <span id="modalClusterHead"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <strong>Support Agencies:</strong>
+                                <span id="modalClusterAgencies"></span>
+                            </div>
+
+                            <div class="operating-principle">
+                                <h6 class="text-uppercase fw-bold mb-2">OPERATING PRINCIPLE</h6>
+                                <p id="modalClusterPrinciple" class="mb-0"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add this JavaScript before the closing body tag -->
+    <script>
+        const clusterData = {
+            'basicservices': {
+                title: 'BASIC SERVICES CLUSTER (BSC)',
+                lead: 'DILG',
+                head: 'DILG USec. Marlo L. Iringan, CESO III',
+                agencies: 'DSWD, DEPED, DOH, CHED, DOLE, DOJ, DAR, NCIP, DND, NHA, DHSUD, AFP, PNP, PCO, OPAPRU, NAPC, NICA, NEDA',
+                principle: 'Led by DILG, this cluster shall provide responsive delivery of basic services in order to contribute to the establishment of conflict-resilient, sustainable, and economically developed communities with the Retooled Community Support Program (RCSP) as its primary vehicle.'
+            },
+            'situational': {
+                title: 'SITUATIONAL AWARENESS AND KNOWLEDGE MANAGEMENT (SAKM)',
+                lead: 'NICA',
+                head: 'NICA DG Ricardo F. De Leon',
+                agencies: 'DND, DILG, AFP, PNP, NBI, PIA, PPSC, PNTI, NCIP, PCO',
+                principle: 'Led by the National Intelligence Coordinating Agency (NICA), this cluster shall provide and disseminate timely and accurate information and assessment on situations regarding communist terror groups and guidance to the Whole-of-Nation Team in order to support the objective to end local communist armed conflict.'
+            },
+            'localgov': {
+                title: 'LOCAL GOVERNMENT EMPOWERMENT CLUSTER (LGE)',
+                lead: 'DILG',
+                head: 'DILG USec Marlo L. Iringan, CESO III',
+                agencies: 'DOJ, DOF, NCIP, DND, AFP, PNP, PCO, NICA',
+                principle: 'With the Department of the Interior and Local Government (DILG) as the lead agency, this cluster shall revisit and enhance the policy direction, capacity building strategies, project development support, and ensure security and justice among the local government.'
+            },
+            'legalcoop': {
+                title: 'LEGAL COOPERATION CLUSTER (LCC)',
+                lead: 'DOJ',
+                head: 'DOJ Usec Adrian Ferdinand S. Sugay',
+                agencies: 'OSG, DILG, DND, AFP, PNP, NBI, PCO, NICA',
+                principle: 'Led by the Department of Justice (DOJ), this cluster shall enhance legal policy direction and capacity building strategies through the fortification of legal arms of all agencies and units of the government.'
+            },
+            'strategic': {
+                title: 'STRATEGIC COMMUNICATIONS CLUSTER',
+                lead: 'PCO',
+                head: 'PCO Sec. Martin M. Andanar',
+                agencies: 'PCOO, PIA, RTVM, APO, NPO, BOC, BCS, IPS, NICA, AFP, PNP',
+                principle: 'Led by the Presidential Communications Operations Office (PCOO), this cluster shall conduct strategic communications efforts to effectively disseminate information on government programs and counter propaganda.'
+            },
+            'localpeace': {
+                title: 'LOCAL PEACE ENGAGEMENT CLUSTER',
+                lead: 'DILG',
+                head: 'DILG USec Marlo L. Iringan, CESO III',
+                agencies: 'OPAPRU, DND, AFP, PNP, NICA, PCO',
+                principle: 'Led by DILG, this cluster shall facilitate, strengthen and support local peace engagements and interventions to address local armed conflict situations.'
+            },
+            'poverty': {
+                title: 'POVERTY REDUCTION, LIVELIHOOD AND EMPLOYMENT CLUSTER',
+                lead: 'DTI',
+                head: 'DTI Usec. Blesila A. Lantayona',
+                agencies: 'DSWD, DA, DAR, TESDA, DOLE, DICT, DOT, DENR, CDA, NCIP',
+                principle: 'Led by DTI, this cluster shall help improve the economic situation of former rebels through various poverty reduction and livelihood programs.'
+            },
+            'infrastructure': {
+                title: 'INFRASTRUCTURE AND RESOURCE MANAGEMENT CLUSTER',
+                lead: 'DPWH',
+                head: 'DPWH Sec. Mark A. Villar',
+                agencies: 'DOTr, DICT, NIA, NEA, DOE, DENR, DAR, DA',
+                principle: 'Led by DPWH, this cluster shall ensure the implementation of various infrastructure projects in conflict-affected areas.'
+            },
+            'sectoral': {
+                title: 'SECTORAL UNIFICATION, CAPACITY BUILDING AND EMPOWERMENT CLUSTER',
+                lead: 'NAPC',
+                head: 'NAPC Sec. Noel K. Felongco',
+                agencies: 'DILG, DSWD, NYC, NCIP, PCW, DepEd, CHED, TESDA',
+                principle: 'Led by NAPC, this cluster shall strengthen sectoral organizations and empower them through capacity-building programs.'
+            },
+            'international': {
+                title: 'INTERNATIONAL ENGAGEMENT CLUSTER',
+                lead: 'DFA',
+                head: 'DFA Sec. Teodoro L. Locsin Jr.',
+                agencies: 'DOJ, DND, DILG, PCO, NICA',
+                principle: 'Led by DFA, this cluster shall engage with the international community to gain support and understanding for the government\'s efforts to end local communist armed conflict.',
+            },
+            'enhancecomp': {
+                title: 'ENHANCED COMPREHENSIVE LOCAL INTEGRATION PROGRAM CLUSTER',
+                lead: 'DILG',
+                head: 'DILG USec Marlo L. Iringan, CESO III',
+                agencies: 'OPAPRU, DND, AFP, PNP, DSWD, DTI, TESDA, DA, DOH, DepEd',
+                principle: 'Led by DILG, this cluster shall implement programs for the successful reintegration of former rebels into mainstream society.'
+            },
+            'peacelaw': {
+                title: 'PEACE, LAW ENFORCEMENT AND DEVELOPMENT SUPPORT CLUSTER',
+                lead: 'DND',
+                head: 'DND Sec. Delfin N. Lorenzana',
+                agencies: 'AFP, PNP, DILG, DOJ, NICA, PCO',
+                principle: 'Led by DND, this cluster shall ensure peace and security while supporting development initiatives in conflict-affected areas.'
+            }
+        };
+
+        document.querySelectorAll('.logo-circle a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Extract cluster identifier from data-cluster attribute
+                const clusterKey = this.getAttribute('data-cluster');
+
+                if (clusterData[clusterKey]) {
+                    const data = clusterData[clusterKey];
+
+                    // Update modal content
+                    document.getElementById('modalClusterLogo').src = this.querySelector('img').src;
+                    document.getElementById('modalClusterTitle').textContent = data.title;
+                    document.getElementById('modalClusterLead').textContent = data.lead;
+                    document.getElementById('modalClusterHead').textContent = data.head;
+                    document.getElementById('modalClusterAgencies').textContent = data.agencies;
+                    document.getElementById('modalClusterPrinciple').textContent = data.principle;
+
+                    // Show modal
+                    new bootstrap.Modal(document.getElementById('clusterModal')).show();
+                }
+            });
+        });
+    </script>
+
+    <!-- Add this JavaScript before the closing body tag -->
+    <script>
+        // Simplified scroll event listener that only handles color transition
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.container-fluid.bg-white.sticky-top');
+            const scrollPosition = window.scrollY;
+
+            if (scrollPosition > 0) { // Changed from 50 to 0
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+    <!-- Add these styles to your existing CSS -->
+    <style>
+        .modal-content {
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-header {
+            padding: 1rem 1rem 0;
+        }
+
+        .btn-close {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background-color: transparent;
+            padding: 0.5rem;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .cluster-info {
+            font-size: 14px;
+        }
+
+        #modalClusterTitle {
+            font-size: 24px;
+            color: #000;
+        }
+
+        .operating-principle {
+            margin-top: 20px;
+        }
+
+        .operating-principle h6 {
+            font-size: 14px;
+            color: #000;
+        }
+
+        .operating-principle p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Adjust modal width */
+        @media (min-width: 992px) {
+            .modal-lg {
+                max-width: 800px;
+            }
+        }
+    </style>
+</body>
+
+</html>
