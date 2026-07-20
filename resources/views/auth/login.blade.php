@@ -19,6 +19,11 @@
                 <div class="row flex-grow">
                     <div class="col-lg-6 d-flex align-items-center justify-content-center">
                         <div class="auth-form-transparent text-left p-3">
+                            <div class="mb-3">
+                                <a href="{{ route('landing') }}" class="btn btn-outline-secondary btn-sm">
+                                    <i class="ti-arrow-left mr-1"></i> Back
+                                </a>
+                            </div>
                             <div class="brand-logo">
                                 <img src="{{ asset('assets/img/SHIELD horizontal.png') }}" alt="logo">
                             </div>

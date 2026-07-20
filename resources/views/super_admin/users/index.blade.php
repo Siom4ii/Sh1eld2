@@ -101,7 +101,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" action="{{ route('super_admin.users.store') }}" enctype="multipart/form-data" data-user-form>
+                    <form method="POST" action="{{ route('super_admin.users.store') }}" enctype="multipart/form-data" data-user-form novalidate>
                         @csrf
                         @include('super_admin.users._fields', ['isEdit' => false])
                         <div class="d-flex justify-content-end gap-2 pt-2">
@@ -123,7 +123,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" enctype="multipart/form-data" data-user-form data-edit-form>
+                    <form method="POST" enctype="multipart/form-data" data-user-form data-edit-form novalidate>
                         @csrf @method('PUT')
                         @include('super_admin.users._fields', ['isEdit' => true])
                         <div class="d-flex justify-content-end gap-2 pt-2">
@@ -146,10 +146,115 @@
                 el.classList.toggle('d-none', el.dataset.roleField !== role);
             });
         }
+
+        function setFieldError(field, message) {
+            const wrapper = field.closest('.input-group') || field;
+            const container = wrapper.parentElement;
+            let feedback = container.querySelector('.invalid-feedback[data-client-error]');
+
+            field.classList.add('is-invalid');
+            if (!feedback) {
+                feedback = document.createElement('div');
+                feedback.className = 'invalid-feedback d-block';
+                feedback.dataset.clientError = 'true';
+                container.appendChild(feedback);
+            }
+            feedback.textContent = message;
+        }
+
+        function clearClientErrors(form) {
+            form.querySelectorAll('.is-invalid').forEach((field) => field.classList.remove('is-invalid'));
+            form.querySelectorAll('[data-client-error]').forEach((el) => el.remove());
+        }
+
+        function validateUserForm(form) {
+            clearClientErrors(form);
+
+            let firstInvalid = null;
+            const requireField = (name, message) => {
+                const field = form.querySelector(`[name="${name}"]`);
+                if (field && !field.value.trim()) {
+                    setFieldError(field, message);
+                    if (!firstInvalid) {
+                        firstInvalid = field;
+                    }
+                }
+            };
+
+            requireField('name', 'Full name is required.');
+            requireField('username', 'Username is required.');
+            requireField('role', 'Role is required.');
+
+            const role = form.querySelector('[name=role]').value;
+            if (role === 'lgu') {
+                requireField('municipality_id', 'Municipality is required for LGU users.');
+            }
+            if (role === 'gov_agency') {
+                requireField('gov_agency_id', 'Government agency is required for agency users.');
+            }
+
+            const password = form.querySelector('[name=password]');
+            const confirmation = form.querySelector('[name=password_confirmation]');
+            const passwordRequired = password.hasAttribute('required');
+            const hasPassword = password.value.length > 0;
+            const hasConfirmation = confirmation.value.length > 0;
+
+            if (passwordRequired || hasPassword || hasConfirmation) {
+                if (!password.value) {
+                    setFieldError(password, 'Password is required.');
+                    if (!firstInvalid) {
+                        firstInvalid = password;
+                    }
+                } else if (password.value.length < 6) {
+                    setFieldError(password, 'Password must be at least 6 characters.');
+                    if (!firstInvalid) {
+                        firstInvalid = password;
+                    }
+                }
+
+                if (!confirmation.value) {
+                    setFieldError(confirmation, 'Confirm password is required.');
+                    if (!firstInvalid) {
+                        firstInvalid = confirmation;
+                    }
+                } else if (password.value !== confirmation.value) {
+                    setFieldError(confirmation, 'Passwords do not match.');
+                    if (!firstInvalid) {
+                        firstInvalid = confirmation;
+                    }
+                }
+            }
+
+            if (firstInvalid) {
+                firstInvalid.focus();
+                return false;
+            }
+
+            return true;
+        }
+
         document.querySelectorAll('[data-user-form]').forEach((form) => {
             const roleSel = form.querySelector('[name=role]');
             roleSel.addEventListener('change', () => syncRoleFields(form));
+            form.addEventListener('submit', (event) => {
+                if (!validateUserForm(form)) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+            });
+            form.addEventListener('input', () => clearClientErrors(form));
             syncRoleFields(form);
+        });
+
+        document.querySelectorAll('[data-password-toggle]').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const input = btn.closest('.input-group').querySelector('input');
+                const shouldShow = input.type === 'password';
+
+                input.type = shouldShow ? 'text' : 'password';
+                btn.title = shouldShow ? 'Hide password' : 'Show password';
+                btn.setAttribute('aria-label', btn.title);
+            });
         });
 
         // Populate + open edit modal.
@@ -163,6 +268,7 @@
                 f.querySelector('[name=municipality_id]').value = btn.dataset.municipality || '';
                 f.querySelector('[name=gov_agency_id]').value = btn.dataset.agency || '';
                 f.querySelector('[name=password]').value = '';
+                f.querySelector('[name=password_confirmation]').value = '';
                 syncRoleFields(f);
                 new bootstrap.Modal(document.getElementById('editUserModal')).show();
             });

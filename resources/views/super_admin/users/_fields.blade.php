@@ -11,8 +11,22 @@
     </div>
     <div class="col-sm-6">
         <label class="form-label">Password {{ $isEdit ? '(blank = keep)' : '' }}</label>
-        <input name="password" type="password" {{ $isEdit ? '' : 'required' }} class="form-control" autocomplete="new-password">
+        <div class="input-group">
+            <input name="password" type="password" {{ $isEdit ? '' : 'required' }} class="form-control" autocomplete="new-password">
+            <button type="button" class="btn btn-outline-secondary" data-password-toggle title="Show password" aria-label="Show password">
+                <i class="ti-eye"></i>
+            </button>
+        </div>
         @error('password') <p class="mt-1 text-danger small">{{ $message }}</p> @enderror
+    </div>
+    <div class="col-sm-6">
+        <label class="form-label">Confirm password {{ $isEdit ? '(if changing)' : '' }}</label>
+        <div class="input-group">
+            <input name="password_confirmation" type="password" {{ $isEdit ? '' : 'required' }} class="form-control" autocomplete="new-password">
+            <button type="button" class="btn btn-outline-secondary" data-password-toggle title="Show password" aria-label="Show password">
+                <i class="ti-eye"></i>
+            </button>
+        </div>
     </div>
     <div class="col-sm-6">
         <label class="form-label">Role</label>
