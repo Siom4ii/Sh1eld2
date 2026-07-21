@@ -1,59 +1,165 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# SH1ELD
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+SH1ELD is a Laravel 12 application with Vite-built frontend assets. It includes a public landing page and authenticated role-based areas for super admin, admin/Katuparan, LGU, government agency, MBLRC, 39th IB, and AFP users.
 
-## About Laravel
+## Requirements
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- PHP 8.2 or newer
+- Composer
+- Node.js and npm
+- SQLite by default, or another Laravel-supported database configured in `.env`
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Local Setup
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. Clone the repository and enter the project directory.
 
-## Learning Laravel
+   ```bash
+   git clone https://github.com/Siom4ii/Sh1eld2.git
+   cd Sh1eld2
+   ```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+2. Install PHP dependencies.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+   ```bash
+   composer install
+   ```
 
-## Laravel Sponsors
+3. Install JavaScript dependencies.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+   ```bash
+   npm install
+   ```
 
-### Premium Partners
+4. Create the environment file and application key.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-## Contributing
+   On Windows PowerShell, use:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   ```powershell
+   Copy-Item .env.example .env
+   php artisan key:generate
+   ```
 
-## Code of Conduct
+5. Create the SQLite database file if you are using the default `.env.example` settings.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   ```bash
+   touch database/database.sqlite
+   ```
 
-## Security Vulnerabilities
+   On Windows PowerShell, use:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   ```powershell
+   New-Item -ItemType File database/database.sqlite -Force
+   ```
 
-## License
+6. Run migrations and seed the starter data.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+   ```bash
+   php artisan migrate --seed
+   ```
+
+7. Start the application.
+
+   ```bash
+   composer run dev
+   ```
+
+   This starts the Laravel development server, queue listener, log viewer, and Vite dev server together.
+
+8. Open the local site.
+
+   ```text
+   http://127.0.0.1:8000
+   ```
+
+## Default Test Account
+
+After running `php artisan migrate --seed`, a test user is created:
+
+```text
+Email: test@example.com
+Password: password
+Role: lgu
+```
+
+## Common Commands
+
+Run only the Laravel server:
+
+```bash
+php artisan serve
+```
+
+Run only Vite:
+
+```bash
+npm run dev
+```
+
+Build production frontend assets:
+
+```bash
+npm run build
+```
+
+Run the test suite:
+
+```bash
+composer run test
+```
+
+Clear cached Laravel configuration:
+
+```bash
+php artisan optimize:clear
+```
+
+## Database Configuration
+
+The example environment uses SQLite:
+
+```env
+DB_CONNECTION=sqlite
+```
+
+To use MySQL or another database, update the `DB_*` variables in `.env`, create the database manually, then run:
+
+```bash
+php artisan migrate --seed
+```
+
+## Legacy Data Import
+
+The project includes an Artisan command for importing legacy data:
+
+```bash
+php artisan import:legacy
+```
+
+Use `--fresh` to wipe the destination tables first:
+
+```bash
+php artisan import:legacy --fresh
+```
+
+Run this only after configuring the required legacy data source expected by the command.
+
+## Troubleshooting
+
+If pages do not load correctly, make sure both the Laravel server and Vite are running with `composer run dev`.
+
+If the database tables are missing, run:
+
+```bash
+php artisan migrate --seed
+```
+
+If assets are stale or missing, rebuild them:
+
+```bash
+npm run build
+```
