@@ -68,7 +68,7 @@ SH1ELD is a Laravel 12 application with Vite-built frontend assets. It includes 
    composer run dev
    ```
 
-   This starts the Laravel development server, queue listener, log viewer, and Vite dev server together.
+   This starts the Laravel development server, queue listener, and Vite dev server together.
 
 8. Open the local site.
 
@@ -117,6 +117,14 @@ Clear cached Laravel configuration:
 ```bash
 php artisan optimize:clear
 ```
+
+Tail Laravel logs when your PHP environment supports Laravel Pail:
+
+```bash
+php artisan pail
+```
+
+Laravel Pail requires the `pcntl` extension, which is not available in the standard Windows/XAMPP PHP build.
 
 ## Database Configuration
 
